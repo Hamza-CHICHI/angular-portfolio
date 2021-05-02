@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic);
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+html,
+body {
+  height: auto;
+  overflow-x: hidden;
+}
+
+body ::-webkit-scrollbar {
+  width: 2px !important;
+}
+
+body ::-webkit-scrollbar-track {
+  background: black;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background: rgb(71, 221, 96);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  margin-top: 0;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+}
+p {
+  margin-top: 4rem;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.ls-small {
+  letter-spacing: 2px;
+}
+.ls-medium {
+  letter-spacing: 4px;
+}
+.ls-large {
+  letter-spacing: 8px;
+}
+.ls-xlarge {
+  letter-spacing: 12px;
+}
+
+.center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

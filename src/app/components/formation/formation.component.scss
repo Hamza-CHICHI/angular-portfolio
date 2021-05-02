@@ -1,0 +1,207 @@
+.main {
+  background-image: url(https://download.unsplash.com/photo-1428550670225-15f007f6f1ba);
+  min-width: 100%;
+  min-height: 100%;
+}
+.wrapper {
+  margin-top: 5rem;
+}
+
+// colors
+$primary: #251486;
+$secondary: #301ba8;
+$info: #371ec4;
+$success: #00bf9a;
+$warning: #ff8d72;
+$danger: #fd5d93;
+
+// timeline variables
+$body-bg: #202447;
+$timeline-before-bg: #222a42;
+$timeline-body-bg: #f7bc65;
+$timeline-body-round: 5px;
+$timeline-body-shadow: 1px 5px 9px rgba(0, 0, 0, 0.1);
+
+// page container
+.my-container {
+  max-width: 650px;
+  margin: 50px auto;
+  font-family: "K2D", sans-serif;
+  letter-spacing: 1px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  min-width: 0%;
+  max-width: 100%;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  animation: mymove 0.1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes mymove {
+  to {
+    width: calc(var(--scroll) * 90%);
+  }
+}
+@keyframes timelinefade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: calc(var(--scroll));
+  }
+}
+
+// timeline style
+.timeline {
+  position: relative;
+  padding-left: 4rem;
+  margin: 0 0 0 30px;
+  color: white;
+  animation: timelinefade 1s ease-in-out infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: $timeline-body-bg;
+  }
+
+  .timeline-container {
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    .timeline-icon {
+      position: absolute;
+      left: -88px;
+      top: 3.5px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 2rem;
+      background: $secondary;
+      animation: rotate 1s linear infinite;
+      animation-play-state: paused;
+      animation-delay: calc(var(--scroll) * -1s);
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+
+      i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .timeline-body {
+      border-radius: $timeline-body-round;
+      padding: 10px 20px 10px;
+      box-shadow: $timeline-body-shadow;
+
+      &:before {
+        content: "";
+        background: inherit;
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        left: -5px;
+        top: 16px;
+        transform: rotate(45deg);
+        border-radius: 0 0 0 2px;
+      }
+
+      .timeline-title {
+        margin-bottom: 2rem;
+
+        .badge {
+          background: $secondary;
+          padding: 6px 8px;
+          border-radius: 3px;
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+
+      .timeline-subtitle {
+        font-weight: 300;
+        font-style: italic;
+        opacity: 0.4;
+        margin-top: 16px;
+        font-size: 11px;
+      }
+    }
+
+    // Primary Timeline
+    &.primary {
+      .badge,
+      .timeline-icon {
+        background: $primary !important;
+      }
+    }
+
+    // Info Timeline
+    &.info {
+      .badge,
+      .timeline-icon {
+        background: $info !important;
+      }
+    }
+
+    // Success Timeline
+    &.success {
+      .badge,
+      .timeline-icon {
+        background: $success !important;
+      }
+    }
+
+    // Warning Timeline
+    &.warning {
+      .badge,
+      .timeline-icon {
+        background: $warning !important;
+      }
+    }
+
+    // Dnager Timeline
+    &.danger {
+      .badge,
+      .timeline-icon {
+        background: $danger !important;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
