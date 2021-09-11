@@ -20,6 +20,5 @@ export class FormationComponent implements OnInit {
       window.pageYOffset * 0.001;
 
     this.hr = window.pageYOffset / window.innerHeight;
-    console.log(this.x);
   };
 }
